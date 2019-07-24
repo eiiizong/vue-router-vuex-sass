@@ -13,7 +13,11 @@ export default {
     }
   },
   mounted () {
-    console.log(this)
+    console.log(this.$store.state.count)
+    setTimeout(() => {
+      this.$store.commit('increment')
+      console.log(this.$store.state.count)
+    }, 1000)
   }
 }
 </script>

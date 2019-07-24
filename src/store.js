@@ -5,9 +5,14 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    name: 'Eiizong'
+    name: 'Eiizong',
+    count: 0
   },
-  mutations: {},
+  mutations: {
+    increment (state) {
+      state.count++
+    }
+  },
   actions: {}
 })
 

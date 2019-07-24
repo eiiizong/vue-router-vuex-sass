@@ -7,14 +7,7 @@ module.exports = {
   rules: {
     quotes: ['error', 'single'],
     semi: ['error', 'never'],
-    'space-before-function-paren': [
-      'error',
-      {
-        anonymous: 'always',
-        named: 'always',
-        asyncArrow: 'always'
-      }
-    ],
+    'space-before-function-paren': ['error', 'always'],
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
