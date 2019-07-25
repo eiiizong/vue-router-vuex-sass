@@ -1,5 +1,9 @@
-const increment = state => {
-  return state.count++
+import { INCREMENT } from '../actionTypes'
+
+const mutation = {
+  [INCREMENT]: function (state) {
+    return state.count++
+  }
 }
 
-export default increment
+export default mutation.INCREMENT

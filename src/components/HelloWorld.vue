@@ -1,8 +1,11 @@
 <template>
-  <div class="hello">{{count}}</div>
+  <div class="hello">{{ count }}</div>
 </template>
 
 <script>
+import { mapState } from 'vuex'
+import { INCREMENT } from '../store/actionTypes'
+
 export default {
   name: 'HelloWorld',
   props: {
@@ -12,17 +15,22 @@ export default {
       required: true
     }
   },
-  data() {
+  data () {
     return {
-      count: 0
+      // count: 0
     }
   },
   mounted () {
-    this.count = this.$store.state.count
+    // this.count = this.$store.state.count
     setTimeout(() => {
-      this.$store.commit('increment')
-      this.count = this.$store.state.count
-    }, 1000)
+      this.$store.dispatch(INCREMENT)
+      // this.count = this.$store.state.count
+    }, 2000)
+  },
+  computed: {
+    ...mapState({
+      count: state => state.count
+    })
   }
 }
 </script>

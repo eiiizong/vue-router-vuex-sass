@@ -1,7 +1,8 @@
-import increment from './increment'
+import incrementMutation from './increment'
+import { INCREMENT } from '../actionTypes'
 
 const mutations = {
-  increment
+  [INCREMENT]: incrementMutation
 }
 
 export default mutations
