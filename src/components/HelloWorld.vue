@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">Hello Component</div>
+  <div class="hello">{{count}}</div>
 </template>
 
 <script>
@@ -12,11 +12,16 @@ export default {
       required: true
     }
   },
+  data() {
+    return {
+      count: 0
+    }
+  },
   mounted () {
-    console.log(this.$store.state.count)
+    this.count = this.$store.state.count
     setTimeout(() => {
       this.$store.commit('increment')
-      console.log(this.$store.state.count)
+      this.count = this.$store.state.count
     }, 1000)
   }
 }
